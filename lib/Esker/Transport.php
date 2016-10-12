@@ -90,7 +90,7 @@ class Transport {
 	 */
 	public function add_variable($name, $value) {
 		if (!isset($this->vars)) {
-			$this->vars = new Transport_Variables();
+			$this->vars = new Transport\Variables();
 		}
 
 		$var = new Variable();
@@ -109,7 +109,7 @@ class Transport {
 	 */
 	public function add_attachment(\Skeleton\File\File $attach_file) {
 		if (!isset($this->attachments)) {
-			$this->attachments = new Transport_Attachments();
+			$this->attachments = new Transport\Attachments();
 		}
 
 		$file = new File();

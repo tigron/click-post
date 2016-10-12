@@ -5,9 +5,9 @@
  * @author Gerry Demaret <gerry@tigron.be>
  * @author Christophe Gosiau <christophe@tigron.be>
  */
-namespace Esker;
+namespace Esker\Client;
 
-class Client_SOAP {
+class Soap {
 
 	/**
 	 * @var SoapClient $soapclient
@@ -50,12 +50,8 @@ class Client_SOAP {
 	 * @access public
 	 */
 	public function __call($name, $arguments) {
-		try {
-			$response = $this->soapclient->__soapCall($name, [ 'parameters' => $arguments[0]]);
-		} catch (\SoapFault $e) {
-//			print_R($e);
-//			print_r($this->soapclient->__getLastRequest());
-		}
+		$response = $this->soapclient->__soapCall($name, [ 'parameters' => $arguments[0]]);
+
 		if (!isset($response->return)) {
 			return;
 		}
@@ -78,7 +74,7 @@ class Client_SOAP {
 	 * @access public
 	 * @param Session $session
 	 */
-	public function set_session(Session $session) {
+	public function set_session(\Esker\Session $session) {
 		$values = ['sessionID' => $session->session_id];
 		$headers = [];
 		$headers[] = new \SoapHeader("urn:SubmissionService2", 'SessionHeaderValue', new \SoapVar($values, SOAP_ENC_OBJECT));

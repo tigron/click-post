@@ -46,7 +46,7 @@ class Session {
 	 * @access public
 	 */
 	private function __construct() {
-		$this->client = new Client_Soap('SessionService2.wsdl');
+		$this->client = new \Esker\Client\Soap('SessionService2.wsdl');
 	}
 
 	/**

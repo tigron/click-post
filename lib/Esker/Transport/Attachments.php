@@ -6,9 +6,9 @@
  * @author Christophe Gosiau <christophe@tigron.be>
  */
 
-namespace Esker;
+namespace Esker\Transport;
 
-class Transport_Attachments {
+class Attachments {
 
 	/**
 	 * Attachment

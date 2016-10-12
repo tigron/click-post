@@ -24,7 +24,7 @@ class Submission {
 	 * @param Session $session
 	 */
 	public function __construct(Session $session) {
-		$this->client = new Client_Soap('SubmissionService2.wsdl');
+		$this->client = new Client\Soap('SubmissionService2.wsdl');
 		$this->client->set_session($session);
 		$this->client->set_location($session->bindings->submissionServiceLocation);
 	}
