@@ -1,5 +1,5 @@
 {
-    "name": "tigron/cick-post",
+    "name": "tigron/click-post",
     "description": "An API client for Ricoh Click & Post service",
     "type": "library",
     "require": {
