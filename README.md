@@ -36,4 +36,11 @@ Send the document
 	$submission = new \Esker\Submission($session);
 	$result = $submission->submit_transport($transport);
 
-$result will contain tracking information
+$result will contain tracking information:
+
+	stdClass Object
+	(
+	    [submissionID] => TLOTXXXXXXX
+	    [transportID] => MOD.XXXXXXXXXXXXXXXxxX
+	)
+
